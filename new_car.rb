@@ -1,0 +1,46 @@
+class Car 
+  attr_reader :model , :make , :year 
+  attr_accessor :heating 
+  
+  @@car_count = 0 
+  
+  def initialize(model, make, year)
+    @model = model 
+    @make = make 
+    @year = year 
+    @@car_count += 1 
+    # as we are going through, we are adding 1 each time 
+  end 
+  
+  def self.count 
+    @@car_count
+  end 
+  
+end 
+
+toyota = Car.new("camry","Toyota", "1998")
+toyota.model 
+toyota.make 
+toyota.year
+
+
+puts "This is my #{toyota.model}. It is a #{toyota.make} and was built in #{toyota.year}."
+
+
+new_toyota = Car.new("camry", "Toyota", "2014")
+new_toyota.model 
+new_toyota.make
+new_toyota.year
+new_toyota.heating = "heating pads"
+
+puts "This is my #{new_toyota.model}. It is a #{new_toyota.make} and was built in #{new_toyota.year}. It even has #{new_toyota.heating}"
+
+
+honda = Car.new("civic", "Honda", "2005")
+honda.model
+honda.make
+honda.year
+
+puts "This is my #{honda.model}. It is a #{honda.make} and was built in #{honda.year}."
+
+puts Car.count 
